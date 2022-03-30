@@ -1,404 +1,152 @@
-2022-03-25 15:13:09.339  INFO 49112 --- [restartedMain] com.blog.BlogApplication                 : Starting BlogApplication on DESKTOP-I3RVQ6E with PID 49112 (D:\idea_projects\blog\target\classes started by 胡裕阳 in D:\idea_projects\blog)
-2022-03-25 15:13:09.344 DEBUG 49112 --- [restartedMain] com.blog.BlogApplication                 : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2022-03-25 15:13:09.344  INFO 49112 --- [restartedMain] com.blog.BlogApplication                 : The following profiles are active: dev
-2022-03-25 15:13:09.403  INFO 49112 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-03-25 15:13:09.425  INFO 49112 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2022-03-25 15:13:12.698  INFO 49112 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-03-25 15:13:12.712  INFO 49112 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-03-25 15:13:12.712  INFO 49112 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
-2022-03-25 15:13:12.858  INFO 49112 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-03-25 15:13:12.858  INFO 49112 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3432 ms
-2022-03-25 15:13:14.236  INFO 49112 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2022-03-25 15:13:14.346  INFO 49112 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2022-03-25 15:13:14.880  INFO 49112 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2022-03-25 15:13:14.923  INFO 49112 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2022-03-25 15:13:14.928  INFO 49112 --- [restartedMain] com.blog.BlogApplication                 : Started BlogApplication in 6.095 seconds (JVM running for 7.469)
-2022-03-25 15:13:25.784  INFO 49112 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-03-25 15:13:25.786  INFO 49112 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-03-25 15:13:25.802  INFO 49112 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 16 ms
-2022-03-25 15:13:25.841  INFO 49112 --- [http-nio-8080-exec-1] com.blog.aspect.LogAspect                : Request: LogAspect.RequestLog(url=http://localhost:8080/, ip=0:0:0:0:0:0:0:1, classMethod=com.blog.controller.IndexController.toIndex, args=[1, {}])
-2022-03-25 15:13:25.975  INFO 49112 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-03-25 15:13:28.240 ERROR 49112 --- [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
-
-java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.19.jar:8.0.19]
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.19.jar:8.0.19]
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.19.jar:8.0.19]
-	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836) ~[mysql-connector-java-8.0.19.jar:8.0.19]
-	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456) ~[mysql-connector-java-8.0.19.jar:8.0.19]
-	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246) ~[mysql-connector-java-8.0.19.jar:8.0.19]
-	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197) ~[mysql-connector-java-8.0.19.jar:8.0.19]
-	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.2.jar:na]
-	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:354) ~[HikariCP-3.4.2.jar:na]
-	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202) ~[HikariCP-3.4.2.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473) ~[HikariCP-3.4.2.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:554) ~[HikariCP-3.4.2.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.2.jar:na]
-	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.4.2.jar:na]
-	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158) ~[spring-jdbc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116) ~[spring-jdbc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79) ~[spring-jdbc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:80) ~[mybatis-spring-2.0.3.jar:2.0.3]
-	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:67) ~[mybatis-spring-2.0.3.jar:2.0.3]
-	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:336) ~[mybatis-3.5.3.jar:3.5.3]
-	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:86) ~[mybatis-3.5.3.jar:3.5.3]
-	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62) ~[mybatis-3.5.3.jar:3.5.3]
-	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324) ~[mybatis-3.5.3.jar:3.5.3]
-	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156) ~[mybatis-3.5.3.jar:3.5.3]
-	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109) ~[mybatis-3.5.3.jar:3.5.3]
-	at com.github.pagehelper.util.ExecutorUtil.executeAutoCount(ExecutorUtil.java:138) ~[pagehelper-5.1.11.jar:na]
-	at com.github.pagehelper.PageInterceptor.count(PageInterceptor.java:150) ~[pagehelper-5.1.11.jar:na]
-	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:97) ~[pagehelper-5.1.11.jar:na]
-	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61) ~[mybatis-3.5.3.jar:3.5.3]
-	at com.sun.proxy.$Proxy113.query(Unknown Source) ~[na:na]
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147) ~[mybatis-3.5.3.jar:3.5.3]
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140) ~[mybatis-3.5.3.jar:3.5.3]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
-	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426) ~[mybatis-spring-2.0.3.jar:2.0.3]
-	at com.sun.proxy.$Proxy81.selectList(Unknown Source) ~[na:na]
-	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:223) ~[mybatis-spring-2.0.3.jar:2.0.3]
-	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:147) ~[mybatis-3.5.3.jar:3.5.3]
-	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:80) ~[mybatis-3.5.3.jar:3.5.3]
-	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:93) ~[mybatis-3.5.3.jar:3.5.3]
-	at com.sun.proxy.$Proxy82.getIndexBlog(Unknown Source) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139) ~[spring-tx-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at com.sun.proxy.$Proxy83.getIndexBlog(Unknown Source) ~[na:na]
-	at com.blog.service.impl.BlogServiceImpl.getIndexBlog(BlogServiceImpl.java:54) ~[classes/:na]
-	at com.blog.controller.IndexController.toIndex(IndexController.java:37) ~[classes/:na]
-	at com.blog.controller.IndexController$$FastClassBySpringCGLIB$$cc1b20fb.invoke(<generated>) ~[classes/:na]
-	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:56) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.aop.aspectj.AspectJAfterAdvice.invoke(AspectJAfterAdvice.java:47) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:55) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at com.blog.controller.IndexController$$EnhancerBySpringCGLIB$$b26c6443.toIndex(<generated>) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
-
-2022-03-25 15:13:28.245  INFO 49112 --- [http-nio-8080-exec-1] com.blog.aspect.LogAspect                : ------------doAfter------------
-2022-03-25 15:13:28.248 ERROR 49112 --- [http-nio-8080-exec-1] c.b.handler.ControllerExceptionHandler   : Request url: /, Exception: {}
-
-org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
-### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
-### The error may exist in file [D:\idea_projects\blog\target\classes\mapper\BlogDao.xml]
-### The error may involve com.blog.dao.BlogDao.getIndexBlog_COUNT
-### The error occurred while executing a query
-### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
-	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:92) ~[mybatis-spring-2.0.3.jar:2.0.3]
-	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:440) ~[mybatis-spring-2.0.3.jar:2.0.3]
-	at com.sun.proxy.$Proxy81.selectList(Unknown Source) ~[na:na]
-	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:223) ~[mybatis-spring-2.0.3.jar:2.0.3]
-	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:147) ~[mybatis-3.5.3.jar:3.5.3]
-	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:80) ~[mybatis-3.5.3.jar:3.5.3]
-	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:93) ~[mybatis-3.5.3.jar:3.5.3]
-	at com.sun.proxy.$Proxy82.getIndexBlog(Unknown Source) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139) ~[spring-tx-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at com.sun.proxy.$Proxy83.getIndexBlog(Unknown Source) ~[na:na]
-	at com.blog.service.impl.BlogServiceImpl.getIndexBlog(BlogServiceImpl.java:54) ~[classes/:na]
-	at com.blog.controller.IndexController.toIndex(IndexController.java:37) ~[classes/:na]
-	at com.blog.controller.IndexController$$FastClassBySpringCGLIB$$cc1b20fb.invoke(<generated>) ~[classes/:na]
-	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:56) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.aop.aspectj.AspectJAfterAdvice.invoke(AspectJAfterAdvice.java:47) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:55) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at com.blog.controller.IndexController$$EnhancerBySpringCGLIB$$b26c6443.toIndex(<generated>) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
-	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
-Caused by: org.apache.ibatis.exceptions.PersistenceException: 
-### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
-### The error may exist in file [D:\idea_projects\blog\target\classes\mapper\BlogDao.xml]
-### The error may involve com.blog.dao.BlogDao.getIndexBlog_COUNT
-### The error occurred while executing a query
-### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
-	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30) ~[mybatis-3.5.3.jar:3.5.3]
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:149) ~[mybatis-3.5.3.jar:3.5.3]
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140) ~[mybatis-3.5.3.jar:3.5.3]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
-	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426) ~[mybatis-spring-2.0.3.jar:2.0.3]
-	... 88 common frames omitted
-Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
-	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:82) ~[spring-jdbc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:80) ~[mybatis-spring-2.0.3.jar:2.0.3]
-	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:67) ~[mybatis-spring-2.0.3.jar:2.0.3]
-	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:336) ~[mybatis-3.5.3.jar:3.5.3]
-	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:86) ~[mybatis-3.5.3.jar:3.5.3]
-	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62) ~[mybatis-3.5.3.jar:3.5.3]
-	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324) ~[mybatis-3.5.3.jar:3.5.3]
-	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156) ~[mybatis-3.5.3.jar:3.5.3]
-	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109) ~[mybatis-3.5.3.jar:3.5.3]
-	at com.github.pagehelper.util.ExecutorUtil.executeAutoCount(ExecutorUtil.java:138) ~[pagehelper-5.1.11.jar:na]
-	at com.github.pagehelper.PageInterceptor.count(PageInterceptor.java:150) ~[pagehelper-5.1.11.jar:na]
-	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:97) ~[pagehelper-5.1.11.jar:na]
-	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61) ~[mybatis-3.5.3.jar:3.5.3]
-	at com.sun.proxy.$Proxy113.query(Unknown Source) ~[na:na]
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147) ~[mybatis-3.5.3.jar:3.5.3]
-	... 94 common frames omitted
-Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.19.jar:8.0.19]
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.19.jar:8.0.19]
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.19.jar:8.0.19]
-	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836) ~[mysql-connector-java-8.0.19.jar:8.0.19]
-	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456) ~[mysql-connector-java-8.0.19.jar:8.0.19]
-	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246) ~[mysql-connector-java-8.0.19.jar:8.0.19]
-	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197) ~[mysql-connector-java-8.0.19.jar:8.0.19]
-	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.2.jar:na]
-	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:354) ~[HikariCP-3.4.2.jar:na]
-	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202) ~[HikariCP-3.4.2.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473) ~[HikariCP-3.4.2.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:554) ~[HikariCP-3.4.2.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.2.jar:na]
-	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.4.2.jar:na]
-	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158) ~[spring-jdbc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116) ~[spring-jdbc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79) ~[spring-jdbc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	... 108 common frames omitted
-
-2022-03-25 15:13:28.253  WARN 49112 --- [http-nio-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
-### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
-### The error may exist in file [D:\idea_projects\blog\target\classes\mapper\BlogDao.xml]
-### The error may involve com.blog.dao.BlogDao.getIndexBlog_COUNT
-### The error occurred while executing a query
-### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)]
-2022-03-25 15:13:38.493  INFO 49112 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2022-03-25 15:13:50.185  INFO 11216 --- [restartedMain] com.blog.BlogApplication                 : Starting BlogApplication on DESKTOP-I3RVQ6E with PID 11216 (D:\idea_projects\blog\target\classes started by 胡裕阳 in D:\idea_projects\blog)
-2022-03-25 15:13:50.190 DEBUG 11216 --- [restartedMain] com.blog.BlogApplication                 : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2022-03-25 15:13:50.194  INFO 11216 --- [restartedMain] com.blog.BlogApplication                 : The following profiles are active: dev
-2022-03-25 15:13:50.295  INFO 11216 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-03-25 15:13:50.298  INFO 11216 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2022-03-25 15:13:52.176  INFO 11216 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-03-25 15:13:52.187  INFO 11216 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-03-25 15:13:52.188  INFO 11216 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
-2022-03-25 15:13:52.393  INFO 11216 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-03-25 15:13:52.394  INFO 11216 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2095 ms
-2022-03-25 15:13:53.287  INFO 11216 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2022-03-25 15:13:53.468  INFO 11216 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2022-03-25 15:13:54.085  INFO 11216 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2022-03-25 15:13:54.131  INFO 11216 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2022-03-25 15:13:54.136  INFO 11216 --- [restartedMain] com.blog.BlogApplication                 : Started BlogApplication in 4.758 seconds (JVM running for 10.059)
-2022-03-25 15:14:00.337  INFO 11216 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-03-25 15:14:00.339  INFO 11216 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-03-25 15:14:00.359  INFO 11216 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 19 ms
-2022-03-25 15:14:00.404  INFO 11216 --- [http-nio-8080-exec-1] com.blog.aspect.LogAspect                : Request: LogAspect.RequestLog(url=http://localhost:8080/, ip=0:0:0:0:0:0:0:1, classMethod=com.blog.controller.IndexController.toIndex, args=[1, {}])
-2022-03-25 15:14:00.471  INFO 11216 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-03-25 15:14:01.035  INFO 11216 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-03-25 15:14:01.055 DEBUG 11216 --- [http-nio-8080-exec-1] com.blog.dao.BlogDao.getIndexBlog_COUNT  : ==>  Preparing: SELECT count(0) FROM t_blog b, t_type t, t_user u WHERE b.type_id = t.id AND u.id = b.user_id 
-2022-03-25 15:14:01.091 DEBUG 11216 --- [http-nio-8080-exec-1] com.blog.dao.BlogDao.getIndexBlog_COUNT  : ==> Parameters: 
-2022-03-25 15:14:01.306 DEBUG 11216 --- [http-nio-8080-exec-1] com.blog.dao.BlogDao.getIndexBlog_COUNT  : <==      Total: 1
-2022-03-25 15:14:01.314 DEBUG 11216 --- [http-nio-8080-exec-1] com.blog.dao.BlogDao.getIndexBlog        : ==>  Preparing: /*主页博客展示*/ select b.id, b.title, b.first_picture, b.views, b.update_time, b.description, t.name typename, t.id typeid, u.nickname, u.avatar from t_blog b, t_type t, t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ? 
-2022-03-25 15:14:01.314 DEBUG 11216 --- [http-nio-8080-exec-1] com.blog.dao.BlogDao.getIndexBlog        : ==> Parameters: 8(Integer)
-2022-03-25 15:14:01.327 DEBUG 11216 --- [http-nio-8080-exec-1] com.blog.dao.BlogDao.getIndexBlog        : <==      Total: 8
-2022-03-25 15:14:01.335 DEBUG 11216 --- [http-nio-8080-exec-1] com.blog.dao.TypeDao.getBlogType         : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title, b.type_id from t_type t, t_blog b where t.id = b.type_id 
-2022-03-25 15:14:01.336 DEBUG 11216 --- [http-nio-8080-exec-1] com.blog.dao.TypeDao.getBlogType         : ==> Parameters: 
-2022-03-25 15:14:01.344 DEBUG 11216 --- [http-nio-8080-exec-1] com.blog.dao.TypeDao.getBlogType         : <==      Total: 8
-2022-03-25 15:14:01.345 DEBUG 11216 --- [http-nio-8080-exec-1] com.blog.dao.TagDao.getBlogTag           : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title from t_tag t, t_blog b, t_blog_tags bt where t.id = bt.tag_id and b.id = bt.blog_id 
-2022-03-25 15:14:01.346 DEBUG 11216 --- [http-nio-8080-exec-1] com.blog.dao.TagDao.getBlogTag           : ==> Parameters: 
-2022-03-25 15:14:01.408 DEBUG 11216 --- [http-nio-8080-exec-1] com.blog.dao.TagDao.getBlogTag           : <==      Total: 12
-2022-03-25 15:14:01.409 DEBUG 11216 --- [http-nio-8080-exec-1] c.blog.dao.BlogDao.getAllRecommendBlog   : ==>  Preparing: select id, title, recommend from t_blog order by update_time desc; 
-2022-03-25 15:14:01.409 DEBUG 11216 --- [http-nio-8080-exec-1] c.blog.dao.BlogDao.getAllRecommendBlog   : ==> Parameters: 
-2022-03-25 15:14:01.412 DEBUG 11216 --- [http-nio-8080-exec-1] c.blog.dao.BlogDao.getAllRecommendBlog   : <==      Total: 8
-2022-03-25 15:14:01.415  INFO 11216 --- [http-nio-8080-exec-1] com.blog.aspect.LogAspect                : ------------doAfter------------
-2022-03-25 15:14:01.415  INFO 11216 --- [http-nio-8080-exec-1] com.blog.aspect.LogAspect                : Result: index
-2022-03-25 15:14:11.495  INFO 11216 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2022-03-25 15:14:11.496  INFO 11216 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-03-25 15:14:11.519  INFO 11216 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2022-03-25 15:21:26.063  INFO 49116 --- [restartedMain] com.blog.BlogApplication                 : Starting BlogApplication on DESKTOP-I3RVQ6E with PID 49116 (D:\idea_projects\blog\target\classes started by 胡裕阳 in D:\idea_projects\blog)
-2022-03-25 15:21:26.066 DEBUG 49116 --- [restartedMain] com.blog.BlogApplication                 : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2022-03-25 15:21:26.068  INFO 49116 --- [restartedMain] com.blog.BlogApplication                 : The following profiles are active: dev
-2022-03-25 15:21:26.119  INFO 49116 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-03-25 15:21:26.120  INFO 49116 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2022-03-25 15:21:27.532  INFO 49116 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-03-25 15:21:27.540  INFO 49116 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-03-25 15:21:27.540  INFO 49116 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
-2022-03-25 15:21:27.670  INFO 49116 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-03-25 15:21:27.670  INFO 49116 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1550 ms
-2022-03-25 15:21:28.295  INFO 49116 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2022-03-25 15:21:28.373  INFO 49116 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2022-03-25 15:21:28.864  INFO 49116 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2022-03-25 15:21:28.907  INFO 49116 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2022-03-25 15:21:28.913  INFO 49116 --- [restartedMain] com.blog.BlogApplication                 : Started BlogApplication in 3.484 seconds (JVM running for 6.093)
-2022-03-25 15:21:35.812  INFO 49116 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-03-25 15:21:35.814  INFO 49116 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-03-25 15:21:35.828  INFO 49116 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 14 ms
-2022-03-25 15:21:35.864  INFO 49116 --- [http-nio-8080-exec-1] com.blog.aspect.LogAspect                : Request: LogAspect.RequestLog(url=http://localhost:8080/, ip=0:0:0:0:0:0:0:1, classMethod=com.blog.controller.IndexController.toIndex, args=[1, {}])
-2022-03-25 15:21:35.919  INFO 49116 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-03-25 15:21:36.327  INFO 49116 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-03-25 15:21:36.335 DEBUG 49116 --- [http-nio-8080-exec-1] com.blog.dao.BlogDao.getIndexBlog_COUNT  : ==>  Preparing: SELECT count(0) FROM t_blog b, t_type t, t_user u WHERE b.type_id = t.id AND u.id = b.user_id 
-2022-03-25 15:21:36.362 DEBUG 49116 --- [http-nio-8080-exec-1] com.blog.dao.BlogDao.getIndexBlog_COUNT  : ==> Parameters: 
-2022-03-25 15:21:36.385 DEBUG 49116 --- [http-nio-8080-exec-1] com.blog.dao.BlogDao.getIndexBlog_COUNT  : <==      Total: 1
-2022-03-25 15:21:36.391 DEBUG 49116 --- [http-nio-8080-exec-1] com.blog.dao.BlogDao.getIndexBlog        : ==>  Preparing: /*主页博客展示*/ select b.id, b.title, b.first_picture, b.views, b.update_time, b.description, t.name typename, t.id typeid, u.nickname, u.avatar from t_blog b, t_type t, t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ? 
-2022-03-25 15:21:36.391 DEBUG 49116 --- [http-nio-8080-exec-1] com.blog.dao.BlogDao.getIndexBlog        : ==> Parameters: 8(Integer)
-2022-03-25 15:21:36.428 DEBUG 49116 --- [http-nio-8080-exec-1] com.blog.dao.BlogDao.getIndexBlog        : <==      Total: 8
-2022-03-25 15:21:36.439 DEBUG 49116 --- [http-nio-8080-exec-1] com.blog.dao.TypeDao.getBlogType         : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title, b.type_id from t_type t, t_blog b where t.id = b.type_id 
-2022-03-25 15:21:36.439 DEBUG 49116 --- [http-nio-8080-exec-1] com.blog.dao.TypeDao.getBlogType         : ==> Parameters: 
-2022-03-25 15:21:36.447 DEBUG 49116 --- [http-nio-8080-exec-1] com.blog.dao.TypeDao.getBlogType         : <==      Total: 8
-2022-03-25 15:21:36.448 DEBUG 49116 --- [http-nio-8080-exec-1] com.blog.dao.TagDao.getBlogTag           : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title from t_tag t, t_blog b, t_blog_tags bt where t.id = bt.tag_id and b.id = bt.blog_id 
-2022-03-25 15:21:36.449 DEBUG 49116 --- [http-nio-8080-exec-1] com.blog.dao.TagDao.getBlogTag           : ==> Parameters: 
-2022-03-25 15:21:36.454 DEBUG 49116 --- [http-nio-8080-exec-1] com.blog.dao.TagDao.getBlogTag           : <==      Total: 12
-2022-03-25 15:21:36.455 DEBUG 49116 --- [http-nio-8080-exec-1] c.blog.dao.BlogDao.getAllRecommendBlog   : ==>  Preparing: select id, title, recommend from t_blog order by update_time desc; 
-2022-03-25 15:21:36.456 DEBUG 49116 --- [http-nio-8080-exec-1] c.blog.dao.BlogDao.getAllRecommendBlog   : ==> Parameters: 
-2022-03-25 15:21:36.462 DEBUG 49116 --- [http-nio-8080-exec-1] c.blog.dao.BlogDao.getAllRecommendBlog   : <==      Total: 8
-2022-03-25 15:21:36.464  INFO 49116 --- [http-nio-8080-exec-1] com.blog.aspect.LogAspect                : ------------doAfter------------
-2022-03-25 15:21:36.465  INFO 49116 --- [http-nio-8080-exec-1] com.blog.aspect.LogAspect                : Result: index
-2022-03-25 15:21:56.292  INFO 49116 --- [http-nio-8080-exec-6] com.blog.aspect.LogAspect                : Request: LogAspect.RequestLog(url=http://localhost:8080/blog/11, ip=0:0:0:0:0:0:0:1, classMethod=com.blog.controller.IndexController.toLogin, args=[11, {}])
-2022-03-25 15:21:56.297 DEBUG 49116 --- [http-nio-8080-exec-6] com.blog.dao.BlogDao.getDetailedBlog     : ==>  Preparing: /*博客详情*/ select b.id, b.first_picture, b.flag, b.title, b.content, b.views, b.update_time,b.commentabled, b.share_statement, b.appreciation, u.nickname, u.avatar, tag.id tagid, tag.name tagname from t_blog b, t_user u, t_tag tag, t_blog_tags tb where b.user_id = u.id and tb.blog_id = b.id and tb.tag_id = tag.id and b.id = ? 
-2022-03-25 15:21:56.299 DEBUG 49116 --- [http-nio-8080-exec-6] com.blog.dao.BlogDao.getDetailedBlog     : ==> Parameters: 11(Long)
-2022-03-25 15:21:56.305 DEBUG 49116 --- [http-nio-8080-exec-6] com.blog.dao.BlogDao.getDetailedBlog     : <==      Total: 1
-2022-03-25 15:21:56.359  INFO 49116 --- [http-nio-8080-exec-6] com.blog.aspect.LogAspect                : ------------doAfter------------
-2022-03-25 15:21:56.360  INFO 49116 --- [http-nio-8080-exec-6] com.blog.aspect.LogAspect                : Result: blog
-2022-03-25 15:21:57.744  INFO 49116 --- [http-nio-8080-exec-9] com.blog.aspect.LogAspect                : Request: LogAspect.RequestLog(url=http://localhost:8080/comments/11, ip=0:0:0:0:0:0:0:1, classMethod=com.blog.controller.CommentController.comments, args=[11, {}])
-2022-03-25 15:21:57.753 DEBUG 49116 --- [http-nio-8080-exec-9] c.b.d.C.findByBlogIdAndParentCommentNull : ==>  Preparing: select c.id cid,c.nickname,c.email,c.content,c.avatar, c.create_time,c.blog_id,c.parent_comment_id from t_comment c, t_blog b where c.blog_id = b.id and c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc 
-2022-03-25 15:21:57.754 DEBUG 49116 --- [http-nio-8080-exec-9] c.b.d.C.findByBlogIdAndParentCommentNull : ==> Parameters: 11(Long), -1(Long)
-2022-03-25 15:21:57.815 DEBUG 49116 --- [http-nio-8080-exec-9] c.b.d.C.findByBlogIdAndParentCommentNull : <==      Total: 1
-2022-03-25 15:21:57.817 DEBUG 49116 --- [http-nio-8080-exec-9] com.blog.dao.BlogDao.getDetailedBlog     : ==>  Preparing: /*博客详情*/ select b.id, b.first_picture, b.flag, b.title, b.content, b.views, b.update_time,b.commentabled, b.share_statement, b.appreciation, u.nickname, u.avatar, tag.id tagid, tag.name tagname from t_blog b, t_user u, t_tag tag, t_blog_tags tb where b.user_id = u.id and tb.blog_id = b.id and tb.tag_id = tag.id and b.id = ? 
-2022-03-25 15:21:57.817 DEBUG 49116 --- [http-nio-8080-exec-9] com.blog.dao.BlogDao.getDetailedBlog     : ==> Parameters: 11(Long)
-2022-03-25 15:21:57.821 DEBUG 49116 --- [http-nio-8080-exec-9] com.blog.dao.BlogDao.getDetailedBlog     : <==      Total: 1
-2022-03-25 15:21:57.824  INFO 49116 --- [http-nio-8080-exec-9] com.blog.aspect.LogAspect                : ------------doAfter------------
-2022-03-25 15:21:57.824  INFO 49116 --- [http-nio-8080-exec-9] com.blog.aspect.LogAspect                : Result: blog :: commentList
-2022-03-25 15:26:11.723  INFO 49116 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2022-03-25 15:26:11.724  INFO 49116 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-03-25 15:26:11.748  INFO 49116 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-03-29 11:32:15.520  INFO 17536 --- [restartedMain] com.blog.BlogApplication                 : Starting BlogApplication on DESKTOP-I3RVQ6E with PID 17536 (D:\idea_projects\blog\target\classes started by 胡裕阳 in D:\idea_projects\blog)
+2022-03-29 11:32:15.529 DEBUG 17536 --- [restartedMain] com.blog.BlogApplication                 : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2022-03-29 11:32:15.531  INFO 17536 --- [restartedMain] com.blog.BlogApplication                 : The following profiles are active: dev
+2022-03-29 11:32:15.629  INFO 17536 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-29 11:32:15.630  INFO 17536 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-03-29 11:32:18.122  INFO 17536 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-03-29 11:32:18.134  INFO 17536 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-29 11:32:18.135  INFO 17536 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2022-03-29 11:32:18.330  INFO 17536 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-29 11:32:18.331  INFO 17536 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2701 ms
+2022-03-29 11:32:20.316  INFO 17536 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-03-29 11:32:20.645  INFO 17536 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-03-29 11:32:21.324  INFO 17536 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-03-29 11:32:21.375  INFO 17536 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-29 11:32:21.402  INFO 17536 --- [restartedMain] com.blog.BlogApplication                 : Started BlogApplication in 6.544 seconds (JVM running for 11.763)
+2022-03-29 11:32:46.600  INFO 17536 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-29 11:32:46.602  INFO 17536 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-03-29 11:32:46.625  INFO 17536 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 22 ms
+2022-03-29 11:32:46.670  INFO 17536 --- [http-nio-8080-exec-1] com.blog.aspect.LogAspect                : Request: LogAspect.RequestLog(url=http://127.0.0.1:8080/, ip=127.0.0.1, classMethod=com.blog.controller.IndexController.toIndex, args=[1, {}])
+2022-03-29 11:32:46.779  INFO 17536 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-03-29 11:32:48.353  INFO 17536 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-03-29 11:32:48.373 DEBUG 17536 --- [http-nio-8080-exec-1] com.blog.dao.BlogDao.getIndexBlog_COUNT  : ==>  Preparing: SELECT count(0) FROM t_blog b, t_type t, t_user u WHERE b.type_id = t.id AND u.id = b.user_id 
+2022-03-29 11:32:48.433 DEBUG 17536 --- [http-nio-8080-exec-1] com.blog.dao.BlogDao.getIndexBlog_COUNT  : ==> Parameters: 
+2022-03-29 11:32:49.326 DEBUG 17536 --- [http-nio-8080-exec-1] com.blog.dao.BlogDao.getIndexBlog_COUNT  : <==      Total: 1
+2022-03-29 11:32:49.346 DEBUG 17536 --- [http-nio-8080-exec-1] com.blog.dao.BlogDao.getIndexBlog        : ==>  Preparing: /*主页博客展示*/ select b.id, b.title, b.first_picture, b.views, b.update_time, b.description, t.name typename, t.id typeid, u.nickname, u.avatar from t_blog b, t_type t, t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ? 
+2022-03-29 11:32:49.350 DEBUG 17536 --- [http-nio-8080-exec-1] com.blog.dao.BlogDao.getIndexBlog        : ==> Parameters: 8(Integer)
+2022-03-29 11:32:49.382 DEBUG 17536 --- [http-nio-8080-exec-1] com.blog.dao.BlogDao.getIndexBlog        : <==      Total: 8
+2022-03-29 11:32:49.405 DEBUG 17536 --- [http-nio-8080-exec-1] com.blog.dao.TypeDao.getBlogType         : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title, b.type_id from t_type t, t_blog b where t.id = b.type_id 
+2022-03-29 11:32:49.407 DEBUG 17536 --- [http-nio-8080-exec-1] com.blog.dao.TypeDao.getBlogType         : ==> Parameters: 
+2022-03-29 11:32:49.430 DEBUG 17536 --- [http-nio-8080-exec-1] com.blog.dao.TypeDao.getBlogType         : <==      Total: 8
+2022-03-29 11:32:49.432 DEBUG 17536 --- [http-nio-8080-exec-1] com.blog.dao.TagDao.getBlogTag           : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title from t_tag t, t_blog b, t_blog_tags bt where t.id = bt.tag_id and b.id = bt.blog_id 
+2022-03-29 11:32:49.433 DEBUG 17536 --- [http-nio-8080-exec-1] com.blog.dao.TagDao.getBlogTag           : ==> Parameters: 
+2022-03-29 11:32:49.562 DEBUG 17536 --- [http-nio-8080-exec-1] com.blog.dao.TagDao.getBlogTag           : <==      Total: 12
+2022-03-29 11:32:49.565 DEBUG 17536 --- [http-nio-8080-exec-1] c.blog.dao.BlogDao.getAllRecommendBlog   : ==>  Preparing: select id, title, recommend from t_blog order by update_time desc; 
+2022-03-29 11:32:49.567 DEBUG 17536 --- [http-nio-8080-exec-1] c.blog.dao.BlogDao.getAllRecommendBlog   : ==> Parameters: 
+2022-03-29 11:32:49.587 DEBUG 17536 --- [http-nio-8080-exec-1] c.blog.dao.BlogDao.getAllRecommendBlog   : <==      Total: 8
+2022-03-29 11:32:49.592  INFO 17536 --- [http-nio-8080-exec-1] com.blog.aspect.LogAspect                : ------------doAfter------------
+2022-03-29 11:32:49.594  INFO 17536 --- [http-nio-8080-exec-1] com.blog.aspect.LogAspect                : Result: index
+2022-03-29 11:33:03.877  INFO 17536 --- [http-nio-8080-exec-4] com.blog.aspect.LogAspect                : Request: LogAspect.RequestLog(url=http://127.0.0.1:8080/blog/11, ip=127.0.0.1, classMethod=com.blog.controller.IndexController.toLogin, args=[11, {}])
+2022-03-29 11:33:03.883 DEBUG 17536 --- [http-nio-8080-exec-4] com.blog.dao.BlogDao.getDetailedBlog     : ==>  Preparing: /*博客详情*/ select b.id, b.first_picture, b.flag, b.title, b.content, b.views, b.update_time,b.commentabled, b.share_statement, b.appreciation, u.nickname, u.avatar, tag.id tagid, tag.name tagname from t_blog b, t_user u, t_tag tag, t_blog_tags tb where b.user_id = u.id and tb.blog_id = b.id and tb.tag_id = tag.id and b.id = ? 
+2022-03-29 11:33:03.885 DEBUG 17536 --- [http-nio-8080-exec-4] com.blog.dao.BlogDao.getDetailedBlog     : ==> Parameters: 11(Long)
+2022-03-29 11:33:03.916 DEBUG 17536 --- [http-nio-8080-exec-4] com.blog.dao.BlogDao.getDetailedBlog     : <==      Total: 1
+2022-03-29 11:33:04.000  INFO 17536 --- [http-nio-8080-exec-4] com.blog.aspect.LogAspect                : ------------doAfter------------
+2022-03-29 11:33:04.000  INFO 17536 --- [http-nio-8080-exec-4] com.blog.aspect.LogAspect                : Result: blog
+2022-03-29 11:33:05.281  INFO 17536 --- [http-nio-8080-exec-10] com.blog.aspect.LogAspect                : Request: LogAspect.RequestLog(url=http://127.0.0.1:8080/comments/11, ip=127.0.0.1, classMethod=com.blog.controller.CommentController.comments, args=[11, {}])
+2022-03-29 11:33:05.291 DEBUG 17536 --- [http-nio-8080-exec-10] c.b.d.C.findByBlogIdAndParentCommentNull : ==>  Preparing: select c.id cid,c.nickname,c.email,c.content,c.avatar, c.create_time,c.blog_id,c.parent_comment_id from t_comment c, t_blog b where c.blog_id = b.id and c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc 
+2022-03-29 11:33:05.292 DEBUG 17536 --- [http-nio-8080-exec-10] c.b.d.C.findByBlogIdAndParentCommentNull : ==> Parameters: 11(Long), -1(Long)
+2022-03-29 11:33:05.379 DEBUG 17536 --- [http-nio-8080-exec-10] c.b.d.C.findByBlogIdAndParentCommentNull : <==      Total: 1
+2022-03-29 11:33:05.380 DEBUG 17536 --- [http-nio-8080-exec-10] com.blog.dao.BlogDao.getDetailedBlog     : ==>  Preparing: /*博客详情*/ select b.id, b.first_picture, b.flag, b.title, b.content, b.views, b.update_time,b.commentabled, b.share_statement, b.appreciation, u.nickname, u.avatar, tag.id tagid, tag.name tagname from t_blog b, t_user u, t_tag tag, t_blog_tags tb where b.user_id = u.id and tb.blog_id = b.id and tb.tag_id = tag.id and b.id = ? 
+2022-03-29 11:33:05.381 DEBUG 17536 --- [http-nio-8080-exec-10] com.blog.dao.BlogDao.getDetailedBlog     : ==> Parameters: 11(Long)
+2022-03-29 11:33:05.383 DEBUG 17536 --- [http-nio-8080-exec-10] com.blog.dao.BlogDao.getDetailedBlog     : <==      Total: 1
+2022-03-29 11:33:05.387  INFO 17536 --- [http-nio-8080-exec-10] com.blog.aspect.LogAspect                : ------------doAfter------------
+2022-03-29 11:33:05.387  INFO 17536 --- [http-nio-8080-exec-10] com.blog.aspect.LogAspect                : Result: blog :: commentList
+2022-03-29 11:37:55.378  INFO 17536 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-03-29 11:37:55.381  INFO 17536 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-03-29 11:37:55.538  INFO 17536 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-03-29 15:09:37.976  INFO 18956 --- [restartedMain] com.blog.BlogApplication                 : Starting BlogApplication on DESKTOP-I3RVQ6E with PID 18956 (D:\idea_projects\blog\target\classes started by 胡裕阳 in D:\idea_projects\blog)
+2022-03-29 15:09:37.980 DEBUG 18956 --- [restartedMain] com.blog.BlogApplication                 : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2022-03-29 15:09:37.984  INFO 18956 --- [restartedMain] com.blog.BlogApplication                 : The following profiles are active: dev
+2022-03-29 15:09:38.051  INFO 18956 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-29 15:09:38.051  INFO 18956 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-03-29 15:09:39.519  INFO 18956 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-03-29 15:09:39.530  INFO 18956 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-29 15:09:39.530  INFO 18956 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2022-03-29 15:09:39.653  INFO 18956 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-29 15:09:39.654  INFO 18956 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1602 ms
+2022-03-29 15:09:40.454  INFO 18956 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-03-29 15:09:40.604  INFO 18956 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-03-29 15:09:41.119  INFO 18956 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-03-29 15:09:41.176  INFO 18956 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-29 15:09:41.181  INFO 18956 --- [restartedMain] com.blog.BlogApplication                 : Started BlogApplication in 3.702 seconds (JVM running for 6.877)
+2022-03-29 15:10:12.391  INFO 18956 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-29 15:10:12.393  INFO 18956 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-03-29 15:10:12.411  INFO 18956 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 17 ms
+2022-03-29 15:10:12.448  INFO 18956 --- [http-nio-8080-exec-1] com.blog.aspect.LogAspect                : Request: LogAspect.RequestLog(url=http://127.0.0.1:8080/, ip=127.0.0.1, classMethod=com.blog.controller.IndexController.toIndex, args=[1, {}])
+2022-03-29 15:10:12.508  INFO 18956 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-03-29 15:10:12.924  INFO 18956 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-03-29 15:10:12.933 DEBUG 18956 --- [http-nio-8080-exec-1] com.blog.dao.BlogDao.getIndexBlog_COUNT  : ==>  Preparing: SELECT count(0) FROM t_blog b, t_type t, t_user u WHERE b.type_id = t.id AND u.id = b.user_id 
+2022-03-29 15:10:12.961 DEBUG 18956 --- [http-nio-8080-exec-1] com.blog.dao.BlogDao.getIndexBlog_COUNT  : ==> Parameters: 
+2022-03-29 15:10:12.987 DEBUG 18956 --- [http-nio-8080-exec-1] com.blog.dao.BlogDao.getIndexBlog_COUNT  : <==      Total: 1
+2022-03-29 15:10:12.993 DEBUG 18956 --- [http-nio-8080-exec-1] com.blog.dao.BlogDao.getIndexBlog        : ==>  Preparing: /*主页博客展示*/ select b.id, b.title, b.first_picture, b.views, b.update_time, b.description, t.name typename, t.id typeid, u.nickname, u.avatar from t_blog b, t_type t, t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ? 
+2022-03-29 15:10:12.994 DEBUG 18956 --- [http-nio-8080-exec-1] com.blog.dao.BlogDao.getIndexBlog        : ==> Parameters: 8(Integer)
+2022-03-29 15:10:13.005 DEBUG 18956 --- [http-nio-8080-exec-1] com.blog.dao.BlogDao.getIndexBlog        : <==      Total: 8
+2022-03-29 15:10:13.012 DEBUG 18956 --- [http-nio-8080-exec-1] com.blog.dao.TypeDao.getBlogType         : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title, b.type_id from t_type t, t_blog b where t.id = b.type_id 
+2022-03-29 15:10:13.012 DEBUG 18956 --- [http-nio-8080-exec-1] com.blog.dao.TypeDao.getBlogType         : ==> Parameters: 
+2022-03-29 15:10:13.019 DEBUG 18956 --- [http-nio-8080-exec-1] com.blog.dao.TypeDao.getBlogType         : <==      Total: 8
+2022-03-29 15:10:13.020 DEBUG 18956 --- [http-nio-8080-exec-1] com.blog.dao.TagDao.getBlogTag           : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title from t_tag t, t_blog b, t_blog_tags bt where t.id = bt.tag_id and b.id = bt.blog_id 
+2022-03-29 15:10:13.020 DEBUG 18956 --- [http-nio-8080-exec-1] com.blog.dao.TagDao.getBlogTag           : ==> Parameters: 
+2022-03-29 15:10:13.025 DEBUG 18956 --- [http-nio-8080-exec-1] com.blog.dao.TagDao.getBlogTag           : <==      Total: 12
+2022-03-29 15:10:13.026 DEBUG 18956 --- [http-nio-8080-exec-1] c.blog.dao.BlogDao.getAllRecommendBlog   : ==>  Preparing: select id, title, recommend from t_blog order by update_time desc; 
+2022-03-29 15:10:13.026 DEBUG 18956 --- [http-nio-8080-exec-1] c.blog.dao.BlogDao.getAllRecommendBlog   : ==> Parameters: 
+2022-03-29 15:10:13.031 DEBUG 18956 --- [http-nio-8080-exec-1] c.blog.dao.BlogDao.getAllRecommendBlog   : <==      Total: 8
+2022-03-29 15:10:13.034  INFO 18956 --- [http-nio-8080-exec-1] com.blog.aspect.LogAspect                : ------------doAfter------------
+2022-03-29 15:10:13.035  INFO 18956 --- [http-nio-8080-exec-1] com.blog.aspect.LogAspect                : Result: index
+2022-03-29 15:12:05.084  INFO 18956 --- [http-nio-8080-exec-9] com.blog.aspect.LogAspect                : Request: LogAspect.RequestLog(url=http://127.0.0.1:8080/archives, ip=127.0.0.1, classMethod=com.blog.controller.ArchiveShowController.archives, args=[{}])
+2022-03-29 15:12:05.117 DEBUG 18956 --- [http-nio-8080-exec-9] com.blog.dao.BlogDao.findGroupYear       : ==>  Preparing: select DATE_FORMAT(b.update_time, '%Y') from t_blog b order by b.update_time desc 
+2022-03-29 15:12:05.119 DEBUG 18956 --- [http-nio-8080-exec-9] com.blog.dao.BlogDao.findGroupYear       : ==> Parameters: 
+2022-03-29 15:12:05.126 DEBUG 18956 --- [http-nio-8080-exec-9] com.blog.dao.BlogDao.findGroupYear       : <==      Total: 8
+2022-03-29 15:12:05.138 DEBUG 18956 --- [http-nio-8080-exec-9] com.blog.dao.BlogDao.findByYear          : ==>  Preparing: select b.title, b.update_time, b.id, b.flag from t_blog b where DATE_FORMAT(b.update_time, "%Y") = ? 
+2022-03-29 15:12:05.139 DEBUG 18956 --- [http-nio-8080-exec-9] com.blog.dao.BlogDao.findByYear          : ==> Parameters: 2019(String)
+2022-03-29 15:12:05.147 DEBUG 18956 --- [http-nio-8080-exec-9] com.blog.dao.BlogDao.findByYear          : <==      Total: 1
+2022-03-29 15:12:05.151 DEBUG 18956 --- [http-nio-8080-exec-9] com.blog.dao.BlogDao.findByYear          : ==>  Preparing: select b.title, b.update_time, b.id, b.flag from t_blog b where DATE_FORMAT(b.update_time, "%Y") = ? 
+2022-03-29 15:12:05.152 DEBUG 18956 --- [http-nio-8080-exec-9] com.blog.dao.BlogDao.findByYear          : ==> Parameters: 2020(String)
+2022-03-29 15:12:05.165 DEBUG 18956 --- [http-nio-8080-exec-9] com.blog.dao.BlogDao.findByYear          : <==      Total: 7
+2022-03-29 15:12:05.167 DEBUG 18956 --- [http-nio-8080-exec-9] com.blog.dao.BlogDao.getAllBlog          : ==>  Preparing: /*后台博客展示*/ select b.id, b.title, b.update_time, b.recommend, b.type_id, b.published, t.id typeid, t.name typename from t_blog b, t_type t where b.type_id = t.id /*博客类型id=类型id*/ 
+2022-03-29 15:12:05.168 DEBUG 18956 --- [http-nio-8080-exec-9] com.blog.dao.BlogDao.getAllBlog          : ==> Parameters: 
+2022-03-29 15:12:05.178 DEBUG 18956 --- [http-nio-8080-exec-9] com.blog.dao.BlogDao.getAllBlog          : <==      Total: 8
+2022-03-29 15:12:05.179  INFO 18956 --- [http-nio-8080-exec-9] com.blog.aspect.LogAspect                : ------------doAfter------------
+2022-03-29 15:12:05.180  INFO 18956 --- [http-nio-8080-exec-9] com.blog.aspect.LogAspect                : Result: archives
+2022-03-29 15:12:16.978  INFO 18956 --- [http-nio-8080-exec-6] com.blog.aspect.LogAspect                : Request: LogAspect.RequestLog(url=http://127.0.0.1:8080/about, ip=127.0.0.1, classMethod=com.blog.controller.AboutShowController.about, args=[])
+2022-03-29 15:12:16.992  INFO 18956 --- [http-nio-8080-exec-6] com.blog.aspect.LogAspect                : ------------doAfter------------
+2022-03-29 15:12:16.993  INFO 18956 --- [http-nio-8080-exec-6] com.blog.aspect.LogAspect                : Result: about
+2022-03-29 15:12:32.119  INFO 18956 --- [http-nio-8080-exec-3] com.blog.aspect.LogAspect                : Request: LogAspect.RequestLog(url=http://127.0.0.1:8080/types/-1, ip=127.0.0.1, classMethod=com.blog.controller.TypeShowController.types, args=[-1, 1, {}])
+2022-03-29 15:12:32.134 DEBUG 18956 --- [http-nio-8080-exec-3] com.blog.dao.TypeDao.getBlogType_COUNT   : ==>  Preparing: SELECT count(0) FROM t_type t, t_blog b WHERE t.id = b.type_id 
+2022-03-29 15:12:32.136 DEBUG 18956 --- [http-nio-8080-exec-3] com.blog.dao.TypeDao.getBlogType_COUNT   : ==> Parameters: 
+2022-03-29 15:12:32.140 DEBUG 18956 --- [http-nio-8080-exec-3] com.blog.dao.TypeDao.getBlogType_COUNT   : <==      Total: 1
+2022-03-29 15:12:32.142 DEBUG 18956 --- [http-nio-8080-exec-3] com.blog.dao.TypeDao.getBlogType         : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title, b.type_id from t_type t, t_blog b where t.id = b.type_id LIMIT ? 
+2022-03-29 15:12:32.143 DEBUG 18956 --- [http-nio-8080-exec-3] com.blog.dao.TypeDao.getBlogType         : ==> Parameters: 100(Integer)
+2022-03-29 15:12:32.150 DEBUG 18956 --- [http-nio-8080-exec-3] com.blog.dao.TypeDao.getBlogType         : <==      Total: 8
+2022-03-29 15:12:32.156 DEBUG 18956 --- [http-nio-8080-exec-3] com.blog.dao.BlogDao.getByTypeId         : ==>  Preparing: select b.id, b.title, b.first_picture, b.views, b.update_time, b.description, t.name typename, t.id typeid, u.nickname, u.avatar from t_blog b, t_type t, t_user u where b.type_id = t.id and u.id = b.user_id and b.type_id = ? order by b.update_time desc 
+2022-03-29 15:12:32.158 DEBUG 18956 --- [http-nio-8080-exec-3] com.blog.dao.BlogDao.getByTypeId         : ==> Parameters: 3(Long)
+2022-03-29 15:12:32.164 DEBUG 18956 --- [http-nio-8080-exec-3] com.blog.dao.BlogDao.getByTypeId         : <==      Total: 2
+2022-03-29 15:12:32.167  INFO 18956 --- [http-nio-8080-exec-3] com.blog.aspect.LogAspect                : ------------doAfter------------
+2022-03-29 15:12:32.168  INFO 18956 --- [http-nio-8080-exec-3] com.blog.aspect.LogAspect                : Result: types
+2022-03-29 15:12:39.179  INFO 18956 --- [http-nio-8080-exec-7] com.blog.aspect.LogAspect                : Request: LogAspect.RequestLog(url=http://127.0.0.1:8080/, ip=127.0.0.1, classMethod=com.blog.controller.IndexController.toIndex, args=[1, {}])
+2022-03-29 15:12:39.191 DEBUG 18956 --- [http-nio-8080-exec-7] com.blog.dao.BlogDao.getIndexBlog_COUNT  : ==>  Preparing: SELECT count(0) FROM t_blog b, t_type t, t_user u WHERE b.type_id = t.id AND u.id = b.user_id 
+2022-03-29 15:12:39.193 DEBUG 18956 --- [http-nio-8080-exec-7] com.blog.dao.BlogDao.getIndexBlog_COUNT  : ==> Parameters: 
+2022-03-29 15:12:39.198 DEBUG 18956 --- [http-nio-8080-exec-7] com.blog.dao.BlogDao.getIndexBlog_COUNT  : <==      Total: 1
+2022-03-29 15:12:39.202 DEBUG 18956 --- [http-nio-8080-exec-7] com.blog.dao.BlogDao.getIndexBlog        : ==>  Preparing: /*主页博客展示*/ select b.id, b.title, b.first_picture, b.views, b.update_time, b.description, t.name typename, t.id typeid, u.nickname, u.avatar from t_blog b, t_type t, t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ? 
+2022-03-29 15:12:39.205 DEBUG 18956 --- [http-nio-8080-exec-7] com.blog.dao.BlogDao.getIndexBlog        : ==> Parameters: 8(Integer)
+2022-03-29 15:12:39.235 DEBUG 18956 --- [http-nio-8080-exec-7] com.blog.dao.BlogDao.getIndexBlog        : <==      Total: 8
+2022-03-29 15:12:39.239 DEBUG 18956 --- [http-nio-8080-exec-7] com.blog.dao.TypeDao.getBlogType         : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title, b.type_id from t_type t, t_blog b where t.id = b.type_id 
+2022-03-29 15:12:39.240 DEBUG 18956 --- [http-nio-8080-exec-7] com.blog.dao.TypeDao.getBlogType         : ==> Parameters: 
+2022-03-29 15:12:39.246 DEBUG 18956 --- [http-nio-8080-exec-7] com.blog.dao.TypeDao.getBlogType         : <==      Total: 8
+2022-03-29 15:12:39.248 DEBUG 18956 --- [http-nio-8080-exec-7] com.blog.dao.TagDao.getBlogTag           : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title from t_tag t, t_blog b, t_blog_tags bt where t.id = bt.tag_id and b.id = bt.blog_id 
+2022-03-29 15:12:39.252 DEBUG 18956 --- [http-nio-8080-exec-7] com.blog.dao.TagDao.getBlogTag           : ==> Parameters: 
+2022-03-29 15:12:39.267 DEBUG 18956 --- [http-nio-8080-exec-7] com.blog.dao.TagDao.getBlogTag           : <==      Total: 12
+2022-03-29 15:12:39.275 DEBUG 18956 --- [http-nio-8080-exec-7] c.blog.dao.BlogDao.getAllRecommendBlog   : ==>  Preparing: select id, title, recommend from t_blog order by update_time desc; 
+2022-03-29 15:12:39.277 DEBUG 18956 --- [http-nio-8080-exec-7] c.blog.dao.BlogDao.getAllRecommendBlog   : ==> Parameters: 
+2022-03-29 15:12:39.290 DEBUG 18956 --- [http-nio-8080-exec-7] c.blog.dao.BlogDao.getAllRecommendBlog   : <==      Total: 8
+2022-03-29 15:12:39.292  INFO 18956 --- [http-nio-8080-exec-7] com.blog.aspect.LogAspect                : ------------doAfter------------
+2022-03-29 15:12:39.293  INFO 18956 --- [http-nio-8080-exec-7] com.blog.aspect.LogAspect                : Result: index
+2022-03-29 17:11:02.402  INFO 18956 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-03-29 17:11:02.455  INFO 18956 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-03-29 17:11:02.506  INFO 18956 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-03-29 21:17:08.664  INFO 17044 --- [main] com.blog.BlogApplicationTests            : Starting BlogApplicationTests on DESKTOP-I3RVQ6E with PID 17044 (started by ��ԣ�� in D:\idea_projects\blog)
+2022-03-29 21:17:08.666 DEBUG 17044 --- [main] com.blog.BlogApplicationTests            : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2022-03-29 21:17:08.667  INFO 17044 --- [main] com.blog.BlogApplicationTests            : The following profiles are active: dev
+2022-03-29 21:17:12.624  INFO 17044 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-03-29 21:17:12.846  INFO 17044 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-03-29 21:17:13.592  INFO 17044 --- [main] com.blog.BlogApplicationTests            : Started BlogApplicationTests in 5.762 seconds (JVM running for 7.682)
+2022-03-29 21:17:14.551  INFO 17044 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
